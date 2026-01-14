@@ -1,0 +1,156 @@
+/* Mobile Responsive */
+
+@media (max-width: 1024px) {
+    .promo-grid {
+        gap: 15px;
+    }
+
+    .widget-layout {
+        flex-direction: column !important;
+    }
+
+    /* Stack sidebar on top for tablets or remove sidebar */
+    .sidebar-banner {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+    }
+
+    .sidebar-banner .btn-outline {
+        margin: 0;
+    }
+
+    .picks-layout {
+        flex-direction: column;
+    }
+
+    .picks-sidebar {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .picks-sidebar ul {
+        display: flex;
+    }
+
+    .picks-sidebar ul li {
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar-content {
+        justify-content: center;
+    }
+
+    .header-grid {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-container {
+        order: 3;
+        min-width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Hide desktop nav */
+    /* Add hamburger if not present in main header, though user ref has visual menu bar. 
+       Usually mobile has hidden menu. Assuming hamburger logic handled by JS/CSS overlap.
+    */
+
+    .hero-slide {
+        height: 400px;
+    }
+
+    .hero-slide h1 {
+        font-size: 40px;
+    }
+
+    .promo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .widget-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .picks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-banner-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-side p {
+        margin: 0 auto 30px;
+    }
+
+    .img-side {
+        width: 100%;
+    }
+
+    .t2 {
+        left: 50%;
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    .t1 {
+        left: 10%;
+    }
+
+    .t3 {
+        left: auto;
+        right: 10%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .footer-bottom .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .widget-products {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-slide {
+        height: 350px;
+    }
+
+    .sidebar-banner {
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sidebar-banner .btn-outline {
+        margin-top: 15px;
+    }
+}

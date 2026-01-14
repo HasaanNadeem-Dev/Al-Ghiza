@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Ghiza | Premium Supplement Store</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/media-queries/index.css">
+    <!-- Fonts: Oswald for headings, Open Sans for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <span><ion-icon name="checkmark-circle"></ion-icon> 100% Authentic Products</span>
+                <span><ion-icon name="cube"></ion-icon> Easy Returns</span>
+                <span><ion-icon name="pricetag"></ion-icon> Best Price Guaranteed</span>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container header-grid">
+                <!-- Logo -->
+                <div class="logo">
+                    <!-- Using text/simple logo since specific branding might mismatch theme -->
+                    <a href="#">
+                        <span class="logo-text">Al-Ghiza<span class="dot">.</span></span>
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <select class="cat-select">
+                            <option>All</option>
+                            <option>Proteins</option>
+                            <option>Vitamins</option>
+                        </select>
+                        <input type="text" placeholder="Search for products, brands or health goals...">
+                        <button type="button"><ion-icon name="search"></ion-icon></button>
+                    </div>
+                    <div class="trending-tags">
+                        <span>Trending:</span> <a href="#">Whey Protein</a> <a href="#">Creatine</a> <a href="#">Fat
+                            Burners</a>
+                    </div>
+                </div>
+
+                <!-- Icons -->
+                <div class="header-icons">
+                    <a href="#" class="icon-btn">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <span class="label">Account</span>
+                    </a>
+                    <a href="#" class="icon-btn">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <span class="label">Wishlist</span>
+                    </a>
+                    <a href="#" class="icon-btn cart-btn">
+                        <ion-icon name="cart-outline"></ion-icon>
+                        <span class="cart-count">2</span>
+                        <span class="label">Cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-links">
+                    <a href="#" class="active">Proteins <ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <a href="#">Gainers</a>
+                    <a href="#">Pre-Workout</a>
+                    <a href="#">Vitamins</a>
+                    <a href="#">Fitness Gear</a>
+                    <a href="#">Goals</a>
+                    <a href="#">Brands</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-slider">
+        <div class="hero-slide active">
+            <!-- User to generate: hero_realistic.png -->
+            <img src="./assets/img/al_ghiza/banners/banner 1.jpeg" alt="Hero Banner" class="hero-bg">
+            <div class="container hero-content">
+                <span class="tagline">ELITE PERFORMANCE</span>
+                <h1>EMPOWER YOUR <br> <span class="highlight">WORKOUT</span></h1>
+                <p>Get flat 20% off on premium isolates.</p>
+                <a href="#" class="btn-cta">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banners -->
+    <section class="promo-section">
+        <div class="container promo-grid">
+            <div class="promo-card dark">
+                <div class="promo-text">
+                    <h3>20% OFF</h3>
+                    <p>On All Proteins</p>
+                    <a href="#" class="link-btn">View Offer</a>
+                </div>
+                <!-- User to generate: promo_protein.png -->
+                <img src="./assets/img/al_ghiza/banners/banner 2.jpeg" alt="Promo">
+            </div>
+            <div class="promo-card red">
+                <div class="promo-text">
+                    <h3>BOOST ENERGY</h3>
+                    <p>Pre-Workout Sale</p>
+                    <a href="#" class="link-btn">View Offer</a>
+                </div>
+                <!-- User to generate: promo_energy.png -->
+                <img src="./assets/img/al_ghiza/banners/banner 3.jpeg" alt="Promo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop By Goals -->
+    <section class="section goals-section">
+        <div class="container">
+            <h2 class="section-heading">SHOP BY <span>GOALS</span></h2>
+            <div class="goals-grid">
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/1.jpg" alt="Build Muscle">
+                    </div>
+                    <span>BUILD MUSCLE</span>
+                    <span class="subtitle">Get powerful.</span>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/2.jpg" alt="Gain Mass">
+                    </div>
+                    <span>GAIN MASS</span>
+                    <span class="subtitle">Build your burn.</span>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/3.jpg" alt="Lose Weight">
+                    </div>
+                    <span>LOSE WEIGHT</span>
+                    <span class="subtitle">Get cut.</span>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/4.jpg" alt="Strength">
+                    </div>
+                    <span>STRENGTH & ENDURANCE</span>
+                    <span class="subtitle">Build your strength.</span>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/5.jpg" alt="Performance">
+                    </div>
+                    <span>BUILD MUSCLE</span>
+                    <span class="subtitle">Get powerful.</span>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-img">
+                        <img src="./assets/img/al_ghiza/categories/6.jpg" alt="Recovery">
+                    </div>
+                    <span>RECOVERY</span>
+                    <span class="subtitle">Boost your muscle recovery.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Widget -->
+    <section class="section widget-section">
+        <div class="container">
+            <div class="widget-layout">
+                <div class="sidebar-banner black-bg">
+                    <h3>BEST <br> SELLERS</h3>
+                    <p>Top rated by customers</p>
+                    <a href="#" class="btn-outline">View All</a>
+                </div>
+                <div class="widget-products">
+                    <div class="product-tile">
+                        <div class="badge-sale">Sale</div>
+                        <!-- User to generate: prod_whey_real.png -->
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/1.jpeg" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Multivitamin Daily</h4>
+                            <div class="rating">★★★★★ (120)</div>
+                            <div class="price">
+                                <span class="current">$49.99</span>
+                                <span class="old">$65.00</span>
+                            </div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-tile">
+                        <!-- User to generate: prod_pre_real.png -->
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/2.webp" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Protein Chocolate</h4>
+                            <div class="rating">★★★★☆ (45)</div>
+                            <div class="price">
+                                <span class="current">$19.99</span>
+                            </div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-tile">
+                        <!-- User to generate: prod_multi_real.png -->
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/3.png" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Protein</h4>
+                            <div class="rating">★★★★★ (210)</div>
+                            <div class="price">
+                                <span class="current">$29.99</span>
+                            </div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Widget -->
+    <section class="section widget-section">
+        <div class="container">
+            <div class="widget-layout reverse">
+                <div class="sidebar-banner green-bg">
+                    <h3>TRENDING <br> NOW</h3>
+                    <p>Hot this week</p>
+                    <a href="#" class="btn-outline light">View All</a>
+                </div>
+                <div class="widget-products">
+                    <div class="product-tile">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/4.png" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Omega 3 Fish Oil</h4>
+                            <div class="rating">★★★★★</div>
+                            <div class="price">$24.99</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-tile">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/6.png" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Protein</h4>
+                            <div class="rating">★★★★☆</div>
+                            <div class="price">$55.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-tile">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/7.webp" alt="Prod">
+                        </div>
+                        <div class="prod-details">
+                            <span class="brand">Al-Ghiza</span>
+                            <h4>Oats & Whey</h4>
+                            <div class="rating">★★★★★</div>
+                            <div class="price">$15.99</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-bar">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <ion-icon name="trophy-outline"></ion-icon>
+                <div>
+                    <h5>Premium Quality</h5>
+                    <span>100% Authentic Brands</span>
+                </div>
+            </div>
+            <div class="feature-item">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <div>
+                    <h5>Secure Payment</h5>
+                    <span>SSL Encrypted Checkout</span>
+                </div>
+            </div>
+            <div class="feature-item">
+                <ion-icon name="rocket-outline"></ion-icon>
+                <div>
+                    <h5>Fast Delivery</h5>
+                    <span>Express Shipping</span>
+                </div>
+            </div>
+            <div class="feature-item">
+                <ion-icon name="headset-outline"></ion-icon>
+                <div>
+                    <h5>24/7 Support</h5>
+                    <span>Expert Advice</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dependable Service Banner Section -->
+    <section class="dependable-service">
+        <div class="container">
+            <div class="service-banner-layout">
+                <div class="text-side">
+                    <h2>DEPENDABLE <br> PRODUCTS</h2>
+                    <h1>EXCEPTIONAL <br> <span class="highlight">SERVICE</span></h1>
+                    <p>We provide the best supplements to fuel your journey. Trusted by thousands of athletes.</p>
+                    <a href="#" class="btn-cta">Read More</a>
+                </div>
+                <div class="img-side">
+                    <!-- Creating a grid of tubs effect with placeholders -->
+                    <img src="./assets/img/al_ghiza/products/1.png" class="floating-tub t1">
+                    <img src="./assets/img/al_ghiza/products/3.png" class="floating-tub t2">
+                    <img src="./assets/img/al_ghiza/products/2.png" class="floating-tub t3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Picks Sidebar Section -->
+    <section class="section top-picks">
+        <div class="container">
+            <h2 class="section-heading">TOP PICKS <span>FOR YOU</span></h2>
+            <div class="picks-layout">
+                <div class="picks-sidebar">
+                    <ul>
+                        <li class="active">Best Sellers</li>
+                        <li>Top Rated</li>
+                        <li>Price Drop</li>
+                        <li>New Arrivals</li>
+                    </ul>
+                </div>
+                <div class="picks-grid">
+                    <!-- Repeat product tiles -->
+                    <div class="product-tile small">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/2.webp"></div>
+                        <div class="details">
+                            <h4>Pro Whey</h4>
+                            <span class="price">$50</span>
+                        </div>
+                    </div>
+                    <div class="product-tile small">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/4.png"></div>
+                        <div class="details">
+                            <h4>BCAA Energy</h4>
+                            <span class="price">$25</span>
+                        </div>
+                    </div>
+                    <div class="product-tile small">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/3.png"></div>
+                        <div class="details">
+                            <h4>Fish Oil</h4>
+                            <span class="price">$20</span>
+                        </div>
+                    </div>
+                    <div class="product-tile small">
+                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/1.png"></div>
+                        <div class="details">
+                            <h4>Casein</h4>
+                            <span class="price">$55</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="col">
+                <span class="logo-text white">Al-Ghiza</span>
+                <p>Your trusted partner in fitness nutrition.</p>
+                <div class="socials">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Information</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="col">
+                <h4>Categories</h4>
+                <a href="#">Proteins</a>
+                <a href="#">Vitamins</a>
+                <a href="#">Equipment</a>
+                <a href="#">Weight Loss</a>
+            </div>
+            <div class="col">
+                <h4>Subscribe</h4>
+                <div class="sub-box">
+                    <input type="email" placeholder="Email Address">
+                    <button>GO</button>
+                </div>
+                <p class="small">Get the latest updates and offers.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Al-Ghiza Nutrition. All Rights Reserved.</p>
+                <div class="payments">
+                    <!-- Icons if available -->
+                    <span>VISA</span> <span>Mastercard</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
