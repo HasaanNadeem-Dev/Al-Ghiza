@@ -19,23 +19,26 @@ function currentSlide(n) {
 
 function showSlides(n) {
     let i;
-    let slides = document.getElementsByClassName("slide");
-    let dots = document.getElementsByClassName("dot");
+    let slides = document.getElementsByClassName("hero-slide");
+    let dots = document.getElementsByClassName("h-dot");
+
+    /* Safety check if slider elements exist */
+    if (slides.length === 0) return;
 
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
 
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        slides[i].className = slides[i].className.replace(" active", "");
+        // slides[i].style.display = "none"; // Using CSS opacity/visibility now
+        slides[i].classList.remove("active");
     }
 
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
-    slides[slideIndex - 1].style.display = "block";
-    slides[slideIndex - 1].className += " active";
+    // slides[slideIndex - 1].style.display = "flex"; // Handled by class
+    slides[slideIndex - 1].classList.add("active");
     dots[slideIndex - 1].className += " active";
 }
 
@@ -50,6 +53,10 @@ function resetTimer() {
 window.moveSlide = function (n) {
     plusSlides(n);
 }
+
+// Global state for slider interactions
+let isHovering = false;
+let isPressed = false;
 
 // Product Card Slider Logic
 function initProductSlider(container) {
@@ -272,6 +279,16 @@ const scrollTopBtn = document.getElementById("scrollTopBtn");
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
+    const header = document.querySelector('.site-header-container');
+
+    // Toggle scrolled class for sticky effect
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        if (header) header.classList.add('scrolled');
+    } else {
+        if (header) header.classList.remove('scrolled');
+    }
+
+    // Back to top button
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         if (scrollTopBtn) scrollTopBtn.style.display = "flex";
     } else {

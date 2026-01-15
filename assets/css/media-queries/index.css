@@ -1,156 +1,311 @@
-/* Mobile Responsive */
+/* --- Media Queries for Al-Ghiza --- */
 
-@media (max-width: 1024px) {
-    .promo-grid {
-        gap: 15px;
-    }
-
-    .widget-layout {
-        flex-direction: column !important;
-    }
-
-    /* Stack sidebar on top for tablets or remove sidebar */
-    .sidebar-banner {
-        width: 100%;
-        height: 150px;
-        margin-bottom: 20px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 40px;
-    }
-
-    .sidebar-banner .btn-outline {
-        margin: 0;
-    }
-
-    .picks-layout {
-        flex-direction: column;
-    }
-
-    .picks-sidebar {
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    .picks-sidebar ul {
-        display: flex;
-    }
-
-    .picks-sidebar ul li {
-        border-bottom: none;
-        border-right: 1px solid var(--border);
-        white-space: nowrap;
+/* Dates Section / Product Grid */
+@media (max-width: 1200px) {
+    .dates-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .top-bar-content {
-        justify-content: center;
+
+    /* Fix horizontal gap */
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
     }
 
-    .header-grid {
-        flex-wrap: wrap;
+    /* Compact Header */
+    .search-section,
+    .deliver-pill {
+        display: none !important;
+    }
+
+    .mobile-search-icon {
+        display: flex !important;
+    }
+
+    .main-bar {
+        padding: 8px 15px;
+        min-height: 60px;
+    }
+
+    .brand-logo img {
+        height: 40px;
+    }
+
+    .actions-section {
+        gap: 12px;
+        margin-top: 2px;
+    }
+
+    /* Compact Category Scroller */
+    .nav-strip {
         gap: 15px;
+        padding: 8px 15px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
-    .search-container {
-        order: 3;
-        min-width: 100%;
-    }
-
-    .nav-links {
+    .nav-strip::-webkit-scrollbar {
         display: none;
     }
 
-    /* Hide desktop nav */
-    /* Add hamburger if not present in main header, though user ref has visual menu bar. 
-       Usually mobile has hidden menu. Assuming hamburger logic handled by JS/CSS overlap.
-    */
-
-    .hero-slide {
-        height: 400px;
+    .nav-strip a {
+        font-size: 12px;
     }
 
-    .hero-slide h1 {
-        font-size: 40px;
-    }
-
-    .promo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .widget-products {
+    /* Small Category Cards */
+    .min-cats-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .picks-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .service-banner-layout {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .text-side p {
-        margin: 0 auto 30px;
-    }
-
-    .img-side {
-        width: 100%;
-    }
-
-    .t2 {
-        left: 50%;
-        transform: translateX(-50%) scale(1.1);
-    }
-
-    .t1 {
-        left: 10%;
-    }
-
-    .t3 {
-        left: auto;
-        right: 10%;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: left;
-    }
-
-    .footer-bottom .container {
-        flex-direction: column;
         gap: 10px;
+    }
+
+    .min-cat-card {
+        height: 85px;
+        padding: 10px;
+    }
+
+    .min-cat-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Compact Hero Slider */
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .slider-wrapper {
+        height: 260px;
+    }
+
+    /* --- Compact Product Cards --- */
+    .date-card {
+        min-height: 310px !important;
+        padding: 10px 5px 0;
+        margin-bottom: 15px;
+    }
+
+    .product-img {
+        height: 110px !important;
+        /* Shorter image area */
+    }
+
+    .product-title {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .weight-options {
+        gap: 4px;
+    }
+
+    .opt {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+
+    .product-price {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .ribbon-add {
+        width: 100% !important;
+        /* Fits within the card width */
+        height: 50px !important;
+        margin: 0 auto;
+        background-size: 100% 100% !important;
+    }
+
+    /* Ensure 2 items per row */
+    .dates-grid,
+    .product-grid-6,
+    .product-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .dates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .dates-header h2 {
+        font-size: 22px;
+    }
+
+    /* Redue Padding for Images */
+    .p-img,
+    .product-img {
+        padding: 5px 0;
+        margin-bottom: 5px;
+    }
+
+    .p-img img,
+    .product-img img {
+        max-height: 90%;
+    }
+
+    /* Promo Banner Fit */
+    .promo-banner-section {
+        padding: 10px 0;
+    }
+
+    .promo-banner-inner {
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    .banner-img {
+        max-height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Info Cards (Mixed Nuts Section) - One Line Scroll */
+    .info-cards-flex {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        gap: 10px !important;
+        padding: 10px 0 !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .info-cards-flex::-webkit-scrollbar {
+        display: none;
+    }
+
+    .info-img {
+        width: 160px;
+        /* Smaller for one line */
+        height: 250px;
+        flex-shrink: 0;
+    }
+
+    /* Promo Banner (Original Ref) */
+    .promo-banner {
+        padding: 20px 15px;
+        margin: 15px 0;
+        min-height: auto;
+    }
+
+    .promo-text h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 }
 
-@media (max-width: 480px) {
-    .widget-products {
+@media (max-width: 1200px) {
+    .product-grid-6 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Hot Deals Section */
+@media (max-width: 992px) {
+    .deals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .deals-grid {
         grid-template-columns: 1fr;
     }
+}
 
-    .features-grid {
-        grid-template-columns: 1fr;
+/* Footer Section */
+@media (max-width: 1200px) {
+    .footer-middle {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    .hero-slide {
-        height: 350px;
+    .footer-support {
+        grid-column: span 4;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-middle {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .sidebar-banner {
-        padding: 20px;
-        height: auto;
+    .footer-support {
+        grid-column: span 2;
         flex-direction: column;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 25px;
         text-align: center;
     }
 
-    .sidebar-banner .btn-outline {
+    /* Footer 2-Column Grid Fix */
+    .main-footer .container {
+        padding: 0 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .footer-middle {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        text-align: left;
+    }
+
+    .footer-col {
+        width: 100% !important;
+        align-items: flex-start;
+    }
+
+    /* Move right side columns slightly left */
+    .footer-col:nth-child(even) {
+        margin-left: -40px !important;
+    }
+
+    /* Wrap long policy links on mobile */
+    .wrap-link {
+        display: block;
+        max-width: 100px;
+        line-height: 1.2;
+    }
+
+    .footer-support {
+        grid-column: span 2 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+        /* Moves them to the left */
         margin-top: 15px;
+        width: 100% !important;
+        padding: 0 5px !important;
+        /* Reduced padding from left */
+        box-sizing: border-box;
+    }
+
+    .support-box {
+        width: auto !important;
+        min-width: 320px;
+        padding: 8px 15px !important;
+        margin: 0 !important;
+        box-sizing: border-box;
     }
 }

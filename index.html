@@ -4,440 +4,866 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Ghiza | Premium Supplement Store</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/media-queries/index.css">
-    <!-- Fonts: Oswald for headings, Open Sans for body -->
+    <title>Al-Ghiza | Pure Nutrition</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media-queries/index.css">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <!-- Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="main-header">
-        <div class="top-bar">
-            <div class="container top-bar-content">
-                <span><ion-icon name="checkmark-circle"></ion-icon> 100% Authentic Products</span>
-                <span><ion-icon name="cube"></ion-icon> Easy Returns</span>
-                <span><ion-icon name="pricetag"></ion-icon> Best Price Guaranteed</span>
-            </div>
-        </div>
-
-        <div class="header-main">
-            <div class="container header-grid">
+    <!-- Nav Bar -->
+    <header class="site-header-container">
+        <div class="container">
+            <div class="main-bar">
                 <!-- Logo -->
-                <div class="logo">
-                    <!-- Using text/simple logo since specific branding might mismatch theme -->
-                    <a href="#">
-                        <span class="logo-text">Al-Ghiza<span class="dot">.</span></span>
+                <div class="logo-section">
+                    <a href="#" class="brand-logo">
+                        <img src="assets/img/logo/logo1.png" alt="Al-Ghiza Logo">
                     </a>
                 </div>
 
-                <!-- Search Bar -->
-                <div class="search-container">
-                    <div class="search-box">
-                        <select class="cat-select">
-                            <option>All</option>
-                            <option>Proteins</option>
-                            <option>Vitamins</option>
-                        </select>
-                        <input type="text" placeholder="Search for products, brands or health goals...">
-                        <button type="button"><ion-icon name="search"></ion-icon></button>
-                    </div>
-                    <div class="trending-tags">
-                        <span>Trending:</span> <a href="#">Whey Protein</a> <a href="#">Creatine</a> <a href="#">Fat
-                            Burners</a>
+                <!-- Search -->
+                <div class="search-section">
+                    <div class="search-pill">
+                        <input type="text" placeholder="Search our store">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
 
-                <!-- Icons -->
-                <div class="header-icons">
-                    <a href="#" class="icon-btn">
-                        <ion-icon name="person-outline"></ion-icon>
-                        <span class="label">Account</span>
-                    </a>
-                    <a href="#" class="icon-btn">
-                        <ion-icon name="heart-outline"></ion-icon>
-                        <span class="label">Wishlist</span>
-                    </a>
-                    <a href="#" class="icon-btn cart-btn">
-                        <ion-icon name="cart-outline"></ion-icon>
-                        <span class="cart-count">2</span>
-                        <span class="label">Cart</span>
+                <!-- Actions -->
+                <div class="actions-section">
+                    <div class="deliver-pill">
+                        <span>Deliver to</span>
+                        <strong>Karachi</strong>
+                    </div>
+
+                    <a href="#" class="icon-link mobile-search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+                    <a href="#" class="icon-link"><i class="fa-regular fa-user"></i></a>
+
+                    <a href="#" class="icon-link cart-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
                     </a>
                 </div>
             </div>
         </div>
-
-        <nav class="main-nav">
-            <div class="container">
-                <div class="nav-links">
-                    <a href="#" class="active">Proteins <ion-icon name="chevron-down-outline"></ion-icon></a>
-                    <a href="#">Gainers</a>
-                    <a href="#">Pre-Workout</a>
-                    <a href="#">Vitamins</a>
-                    <a href="#">Fitness Gear</a>
-                    <a href="#">Goals</a>
-                    <a href="#">Brands</a>
-                </div>
-            </div>
-        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-slider">
-        <div class="hero-slide active">
-            <!-- User to generate: hero_realistic.png -->
-            <img src="./assets/img/al_ghiza/banners/banner 1.jpeg" alt="Hero Banner" class="hero-bg">
-            <div class="container hero-content">
-                <span class="tagline">ELITE PERFORMANCE</span>
-                <h1>EMPOWER YOUR <br> <span class="highlight">WORKOUT</span></h1>
-                <p>Get flat 20% off on premium isolates.</p>
-                <a href="#" class="btn-cta">Shop Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promo Banners -->
-    <section class="promo-section">
-        <div class="container promo-grid">
-            <div class="promo-card dark">
-                <div class="promo-text">
-                    <h3>20% OFF</h3>
-                    <p>On All Proteins</p>
-                    <a href="#" class="link-btn">View Offer</a>
-                </div>
-                <!-- User to generate: promo_protein.png -->
-                <img src="./assets/img/al_ghiza/banners/banner 2.jpeg" alt="Promo">
-            </div>
-            <div class="promo-card red">
-                <div class="promo-text">
-                    <h3>BOOST ENERGY</h3>
-                    <p>Pre-Workout Sale</p>
-                    <a href="#" class="link-btn">View Offer</a>
-                </div>
-                <!-- User to generate: promo_energy.png -->
-                <img src="./assets/img/al_ghiza/banners/banner 3.jpeg" alt="Promo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Shop By Goals -->
-    <section class="section goals-section">
+    <!-- Categorys -->
+    <div class="nav-strip-container">
         <div class="container">
-            <h2 class="section-heading">SHOP BY <span>GOALS</span></h2>
-            <div class="goals-grid">
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/1.jpg" alt="Build Muscle">
-                    </div>
-                    <span>BUILD MUSCLE</span>
-                    <span class="subtitle">Get powerful.</span>
+            <div class="nav-strip">
+                <a href="#"><i class="fa-solid fa-bowl-rice"></i> Talbeena</a>
+                <a href="#"><i class="fa-solid fa-leaf"></i> Premium Nuts</a>
+                <a href="#"><i class="fa-solid fa-cloud-sun"></i> Dates (Ajwa)</a>
+                <a href="#"><i class="fa-solid fa-jar"></i> Pure Honey</a>
+                <a href="#"><i class="fa-solid fa-mortar-pestle"></i> Spices</a>
+                <a href="#"><i class="fa-solid fa-lemon"></i> Dried Fruits</a>
+                <a href="#"><i class="fa-solid fa-seedling"></i> Seeds</a>
+                <a href="#"><i class="fa-solid fa-gift"></i> Bundles</a>
+            </div>
+        </div>
+    </div>
+
+    <!--  Hero Slider -->
+    <section class="hero-slider-section">
+        <div class="slider-wrapper">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('assets/img/banner/hero-bg.png');">
+                <div class="hero-content">
+                    <h1>Talbeena</h1>
+                    <a href="#" class="hero-btn">Order Now</a>
                 </div>
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/2.jpg" alt="Gain Mass">
-                    </div>
-                    <span>GAIN MASS</span>
-                    <span class="subtitle">Build your burn.</span>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('assets/img/banner/promo-bg.png');">
+                <div class="hero-content">
+                    <h1>Dry Fruits</h1>
+                    <a href="#" class="hero-btn">Order Now</a>
                 </div>
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/3.jpg" alt="Lose Weight">
-                    </div>
-                    <span>LOSE WEIGHT</span>
-                    <span class="subtitle">Get cut.</span>
-                </div>
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/4.jpg" alt="Strength">
-                    </div>
-                    <span>STRENGTH & ENDURANCE</span>
-                    <span class="subtitle">Build your strength.</span>
-                </div>
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/5.jpg" alt="Performance">
-                    </div>
-                    <span>BUILD MUSCLE</span>
-                    <span class="subtitle">Get powerful.</span>
-                </div>
-                <div class="goal-item">
-                    <div class="goal-img">
-                        <img src="./assets/img/al_ghiza/categories/6.jpg" alt="Recovery">
-                    </div>
-                    <span>RECOVERY</span>
-                    <span class="subtitle">Boost your muscle recovery.</span>
-                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="hero-dots">
+                <span class="h-dot active" onclick="moveSlide(1)"></span>
+                <span class="h-dot" onclick="moveSlide(2)"></span>
             </div>
         </div>
     </section>
 
-    <!-- Best Sellers Widget -->
-    <section class="section widget-section">
+    <!-- MINI CATEGORY CARDS  -->
+    <section class="min-cats-section">
         <div class="container">
-            <div class="widget-layout">
-                <div class="sidebar-banner black-bg">
-                    <h3>BEST <br> SELLERS</h3>
-                    <p>Top rated by customers</p>
-                    <a href="#" class="btn-outline">View All</a>
+            <div class="min-cats-grid">
+                <!-- Card 1 -->
+                <div class="min-cat-card">
+                    <h3>Talbeena</h3>
+                    <img src="assets/img/cards/talbeena-icon.png" alt="Talbeena">
                 </div>
-                <div class="widget-products">
-                    <div class="product-tile">
-                        <div class="badge-sale">Sale</div>
-                        <!-- User to generate: prod_whey_real.png -->
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/1.jpeg" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Multivitamin Daily</h4>
-                            <div class="rating">★★★★★ (120)</div>
-                            <div class="price">
-                                <span class="current">$49.99</span>
-                                <span class="old">$65.00</span>
-                            </div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-tile">
-                        <!-- User to generate: prod_pre_real.png -->
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/2.webp" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Protein Chocolate</h4>
-                            <div class="rating">★★★★☆ (45)</div>
-                            <div class="price">
-                                <span class="current">$19.99</span>
-                            </div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-tile">
-                        <!-- User to generate: prod_multi_real.png -->
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/3.png" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Protein</h4>
-                            <div class="rating">★★★★★ (210)</div>
-                            <div class="price">
-                                <span class="current">$29.99</span>
-                            </div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
-                    </div>
+                <!-- Card 2 -->
+                <div class="min-cat-card">
+                    <h3>Almonds</h3>
+                    <img src="assets/img/cards/badam-icon.png" alt="Almonds">
+                </div>
+                <!-- Card 3 -->
+                <div class="min-cat-card">
+                    <h3>Pistachios</h3>
+                    <img src="assets/img/cards/Pistachios-icon.png" alt="Pistachios">
+                </div>
+                <!-- Card 4 -->
+                <div class="min-cat-card">
+                    <h3>Dates</h3>
+                    <img src="assets/img/cards/dates-icon.png" alt="Dates">
+                </div>
+                <!-- Card 5 -->
+                <div class="min-cat-card">
+                    <h3>Walnuts</h3>
+                    <img src="assets/img/cards/walnuts-icon.png" alt="Walnuts">
+                </div>
+                <!-- Card 6 -->
+                <div class="min-cat-card">
+                    <h3>Honey</h3>
+                    <img src="assets/img/cards/honey-icon.png" alt="Honey">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trending Widget -->
-    <section class="section widget-section">
+    <!-- PREMIUM DATES SECTION -->
+    <div class="container">
+        <div class="dates-header">
+            <h2>Premium Dates</h2>
+            <a href="#" class="view-all">See more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="dates-grid">
+            <!-- Product 1 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/IraniDates-500g_600x.jpg" alt="Irani Dates">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Irani Dates</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.25kg</span>
+                        <span class="opt">0.5kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (1 Reviews)
+                    </div>
+                    <div class="product-price">Rs.375</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/AjwaDates-500g_600x.jpg" alt="Ajwa Dates">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ajwa Dates</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.25kg</span>
+                        <span class="opt">0.5kg</span>
+                    </div>
+                    <div class="product-rating">
+                        Be the first to review
+                    </div>
+                    <div class="product-price">Rs.1,050</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/Ajwa_Jumbo_Dates-500g_600x.jpg" alt="Ajwa Dates - Large">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ajwa Dates - Large</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.25kg</span>
+                        <span class="opt">0.5kg</span>
+                    </div>
+                    <div class="product-rating">
+                        Be the first to review
+                    </div>
+                    <div class="product-price">Rs.1,270</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/SukriDates-500g_39fce904-d553-455b-9008-490170e31c85_600x.jpg"
+                        alt="Sukri Dates">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Sukri Dates</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.25kg</span>
+                        <span class="opt">0.5kg</span>
+                    </div>
+                    <div class="product-rating">
+                        Be the first to review
+                    </div>
+                    <div class="product-price">Rs.850</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/KalmiDates-500g_a5f219b1-eed4-47d0-a016-f0eadc278cf9_600x.jpg"
+                        alt="Kalmi Dates">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Kalmi Dates</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.25kg</span>
+                        <span class="opt">0.5kg</span>
+                    </div>
+                    <div class="product-rating">
+                        Be the first to review
+                    </div>
+                    <div class="product-price">Rs.1,040</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/dates/AmberDates-500g_600x.jpg" alt="Amber Dates">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Amber Dates</h3>
+                    <div class="weight-options">
+                        <span class="opt active">0.250Kg</span>
+                        <span class="opt">0.5Kg</span>
+                    </div>
+                    <div class="product-rating">
+                        Be the first to review
+                    </div>
+                    <div class="product-price">Rs.1,300</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Best Talbeena -->
+    <div class="container">
+        <div class="dates-header">
+            <h2>Our Best Talbeena</h2>
+            <a href="#" class="view-all">See more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="dates-grid">
+            <!-- Product 1: Ajwa Talbeena -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/Ajwa_Talbeena.jpg" alt="Ajwa Talbeena">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ajwa Talbeena</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (24 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,200</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Pistachio Talbeena -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/Pistachio-Talbeena.jpg" alt="Pistachio Talbeena">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Pistachio Talbeena</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.9 (18 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,450</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Strawberry Talbeena -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/Strawberry_Talbeena.jpg" alt="Strawberry Talbeena">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Strawberry Talbeena</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.8 (12 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,100</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Talbeena Almond with Extra Nuts -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/Talbeena_Almond_with_extra_nuts.jpg"
+                        alt="Talbeena Almond with Extra Nuts">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Almond with Extra Nuts</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (35 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,550</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Talbeena Sugar Free -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/Talbeena_Sugar_free.jpg" alt="Talbeena Sugar free">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Sugar Free Talbeena</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.7 (21 Reviews)
+                    </div>
+                    <div class="product-price">Rs.950</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: Qulfa Talbeena -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/talbeena/qulfa_talbeena.jpg" alt="Qulfa Talbeena">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Qulfa Talbeena</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.9 (42 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,050</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner-section">
         <div class="container">
-            <div class="widget-layout reverse">
-                <div class="sidebar-banner green-bg">
-                    <h3>TRENDING <br> NOW</h3>
-                    <p>Hot this week</p>
-                    <a href="#" class="btn-outline light">View All</a>
+            <div class="promo-banner-inner">
+                <img src="assets/img/banner/banner1.jpg" alt="Promo Banner" class="banner-img">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Best Honey -->
+    <div class="container">
+        <div class="dates-header">
+            <h2>Our Best Honey</h2>
+            <a href="#" class="view-all">See more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="dates-grid">
+            <!-- Product 1: Acacia Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Acacia Honey.png" alt="Acacia Honey">
                 </div>
-                <div class="widget-products">
-                    <div class="product-tile">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/4.png" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Omega 3 Fish Oil</h4>
-                            <div class="rating">★★★★★</div>
-                            <div class="price">$24.99</div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
+                <div class="product-info">
+                    <h3 class="product-title">Acacia Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
                     </div>
-                    <div class="product-tile">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/6.png" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Protein</h4>
-                            <div class="rating">★★★★☆</div>
-                            <div class="price">$55.00</div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (18 Reviews)
                     </div>
-                    <div class="product-tile">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/7.webp" alt="Prod">
-                        </div>
-                        <div class="prod-details">
-                            <span class="brand">Al-Ghiza</span>
-                            <h4>Oats & Whey</h4>
-                            <div class="rating">★★★★★</div>
-                            <div class="price">$15.99</div>
-                            <button class="add-btn">Add to Cart</button>
-                        </div>
+                    <div class="product-price">Rs.1,500</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
                     </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Eucalyptus Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Eucalyptus Honey.png" alt="Eucalyptus Honey">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Eucalyptus Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.9 (14 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,350</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Olive Blossom Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Olive Blossom Honey.png" alt="Olive Blossom Honey">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Olive Blossom Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.8 (10 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,800</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Orange Blossom Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Orange Blossom Honey.png" alt="Orange Blossom Honey">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Orange Blossom Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (22 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,650</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Robinia Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Robinia Honey.png" alt="Robinia Honey">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Robinia Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.9 (16 Reviews)
+                    </div>
+                    <div class="product-price">Rs.1,400</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: Sidr (Beri) Honey -->
+            <div class="date-card">
+                <div class="badge-discount">New Year's Discount</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/honey/Sidr Beri Honey.png" alt="Sidr (Beri) Honey">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Sidr (Beri) Honey</h3>
+                    <div class="weight-options">
+                        <span class="opt active">500g</span>
+                        <span class="opt">1kg</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (42 Reviews)
+                    </div>
+                    <div class="product-price">Rs.2,500</div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Cards -->
+    <section class="info-cards-section">
+        <div class="info-cards-flex">
+            <img src="assets/img/cards/1.png" alt="Card 1" class="info-img">
+            <img src="assets/img/cards/2.png" alt="Card 2" class="info-img">
+            <img src="assets/img/cards/3.png" alt="Card 3" class="info-img">
+            <img src="assets/img/cards/4.png" alt="Card 4" class="info-img">
+            <img src="assets/img/cards/5.png" alt="Card 5" class="info-img">
+        </div>
+    </section>
+
+    <!-- Hot Deals  -->
+    <div class="container">
+        <div class="dates-header">
+            <h2>Hot Deals</h2>
+            <a href="#" class="view-all">View All Deals <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="deals-grid">
+            <!-- Deal 1 -->
+            <div class="date-card deal-card">
+                <div class="badge-discount special">Limited Offer</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/deals/1.png" alt="Ajwa Jumbo Deal">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Talbeena , Ajwa , Dates - Combo</h3>
+                    <div class="weight-options">
+                        <span class="opt active">1kg Combo</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 5.0 (120 Reviews)
+                    </div>
+                    <div class="product-price">Rs.2,499 <span class="old-price">Rs.3,200</span></div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal 2 -->
+            <div class="date-card deal-card">
+                <div class="badge-discount special">Limited Offer</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/deals/2.png" alt="Sidr Honey Deal">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Talbeena , Ajwa , Dates , Almonds , Pistachios - Combo</h3>
+                    <div class="weight-options">
+                        <span class="opt active">1.5kg Combo</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.9 (85 Reviews)
+                    </div>
+                    <div class="product-price">Rs.4,299 <span class="old-price">Rs.5,500</span></div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal 3 -->
+            <div class="date-card deal-card">
+                <div class="badge-discount special">Limited Offer</div>
+                <div class="product-img">
+                    <img src="assets/img/cards/deals/3.png" alt="Irani Dates Deal">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Talbeena , Walnuts , Dates , Almonds , Pistachios - Combo</h3>
+                    <div class="weight-options">
+                        <span class="opt active">2kg Pack</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i> 4.8 (64 Reviews)
+                    </div>
+                    <div class="product-price">Rs.5,499 <span class="old-price">Rs.7,500</span></div>
+                </div>
+                <div class="product-footer">
+                    <div class="ribbon-add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Scroll -->
+    <section class="ktown-features">
+        <div class="features-header">
+            <h2>We always provide<br>you the best in K-Town</h2>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <p>Farm-to-Table</p>
+                    <img src="assets/img/back ground/Farm-to-Table.png" alt="Icon">
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <p>Handcrafted Products</p>
+                    <img src="assets/img/back ground/Handcrafted_Products.png" alt="Icon">
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <p>Loyalty Rewards</p>
+                    <img src="assets/img/back ground/Loyalty_Rewards.png" alt="Icon">
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <p>Multiple Payment Options</p>
+                    <img src="assets/img/back ground/Multiple_Payment_Options-_Secure_Checkout.png" alt="Icon">
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <p>Order & Collect</p>
+                    <img src="assets/img/back ground/Order_Collect.png" alt="Icon">
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <p>Same-Day Delivery</p>
+                    <img src="assets/img/back ground/Same-Day_Delivery.png" alt="Icon">
+                </div>
+                <!-- Feature 7 -->
+                <div class="feature-card">
+                    <p>Order and pick up</p>
+                    <img src="assets/img/back ground/Order-pick-up.png" alt="Icon">
+                </div>
+                <!-- Feature 8 -->
+                <div class="feature-card">
+                    <p>Authentic goods</p>
+                    <img src="assets/img/back ground/14.png" alt="Icon">
+                </div>
+
+                <!-- Duplicate for seamless scroll -->
+                <div class="feature-card">
+                    <p>Farm-to-Table</p>
+                    <img src="assets/img/back ground/Farm-to-Table.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Handcrafted Products</p>
+                    <img src="assets/img/back ground/Handcrafted_Products.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Loyalty Rewards</p>
+                    <img src="assets/img/back ground/Loyalty_Rewards.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Multiple Payment Options</p>
+                    <img src="assets/img/back ground/Multiple_Payment_Options-_Secure_Checkout.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Order & Collect</p>
+                    <img src="assets/img/back ground/Order_Collect.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Same-Day Delivery</p>
+                    <img src="assets/img/back ground/Same-Day_Delivery.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Order and pick up</p>
+                    <img src="assets/img/back ground/Order-pick-up.png" alt="Icon">
+                </div>
+                <div class="feature-card">
+                    <p>Authentic goods</p>
+                    <img src="assets/img/back ground/14.png" alt="Icon">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features-bar">
-        <div class="container features-grid">
-            <div class="feature-item">
-                <ion-icon name="trophy-outline"></ion-icon>
-                <div>
-                    <h5>Premium Quality</h5>
-                    <span>100% Authentic Brands</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <div>
-                    <h5>Secure Payment</h5>
-                    <span>SSL Encrypted Checkout</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <ion-icon name="rocket-outline"></ion-icon>
-                <div>
-                    <h5>Fast Delivery</h5>
-                    <span>Express Shipping</span>
-                </div>
-            </div>
-            <div class="feature-item">
-                <ion-icon name="headset-outline"></ion-icon>
-                <div>
-                    <h5>24/7 Support</h5>
-                    <span>Expert Advice</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dependable Service Banner Section -->
-    <section class="dependable-service">
-        <div class="container">
-            <div class="service-banner-layout">
-                <div class="text-side">
-                    <h2>DEPENDABLE <br> PRODUCTS</h2>
-                    <h1>EXCEPTIONAL <br> <span class="highlight">SERVICE</span></h1>
-                    <p>We provide the best supplements to fuel your journey. Trusted by thousands of athletes.</p>
-                    <a href="#" class="btn-cta">Read More</a>
-                </div>
-                <div class="img-side">
-                    <!-- Creating a grid of tubs effect with placeholders -->
-                    <img src="./assets/img/al_ghiza/products/1.png" class="floating-tub t1">
-                    <img src="./assets/img/al_ghiza/products/3.png" class="floating-tub t2">
-                    <img src="./assets/img/al_ghiza/products/2.png" class="floating-tub t3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Top Picks Sidebar Section -->
-    <section class="section top-picks">
-        <div class="container">
-            <h2 class="section-heading">TOP PICKS <span>FOR YOU</span></h2>
-            <div class="picks-layout">
-                <div class="picks-sidebar">
-                    <ul>
-                        <li class="active">Best Sellers</li>
-                        <li>Top Rated</li>
-                        <li>Price Drop</li>
-                        <li>New Arrivals</li>
-                    </ul>
-                </div>
-                <div class="picks-grid">
-                    <!-- Repeat product tiles -->
-                    <div class="product-tile small">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/2.webp"></div>
-                        <div class="details">
-                            <h4>Pro Whey</h4>
-                            <span class="price">$50</span>
-                        </div>
-                    </div>
-                    <div class="product-tile small">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/4.png"></div>
-                        <div class="details">
-                            <h4>BCAA Energy</h4>
-                            <span class="price">$25</span>
-                        </div>
-                    </div>
-                    <div class="product-tile small">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/3.png"></div>
-                        <div class="details">
-                            <h4>Fish Oil</h4>
-                            <span class="price">$20</span>
-                        </div>
-                    </div>
-                    <div class="product-tile small">
-                        <div class="prod-img"><img src="./assets/img/al_ghiza/products/1.png"></div>
-                        <div class="details">
-                            <h4>Casein</h4>
-                            <span class="price">$55</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER SECTION -->
     <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="col">
-                <span class="logo-text white">Al-Ghiza</span>
-                <p>Your trusted partner in fitness nutrition.</p>
-                <div class="socials">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        <div class="container">
+            <!-- Top Row: Social + App Links -->
+            <div class="footer-top">
+                <div class="connect-social">
+                    <span>Connect with us</span>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="app-links">
+                    <a href="#"><img src="assets/img/back ground/ios-app.avif" alt="App Store"></a>
+                    <a href="#"><img src="assets/img/back ground/playstore.avif" alt="Google Play"></a>
                 </div>
             </div>
-            <div class="col">
-                <h4>Information</h4>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            <div class="col">
-                <h4>Categories</h4>
-                <a href="#">Proteins</a>
-                <a href="#">Vitamins</a>
-                <a href="#">Equipment</a>
-                <a href="#">Weight Loss</a>
-            </div>
-            <div class="col">
-                <h4>Subscribe</h4>
-                <div class="sub-box">
-                    <input type="email" placeholder="Email Address">
-                    <button>GO</button>
+
+            <!-- Middle Row: Links + Support -->
+            <div class="footer-middle">
+                <div class="footer-col">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Terms & Conditions</a>
                 </div>
-                <p class="small">Get the latest updates and offers.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>© 2026 Al-Ghiza Nutrition. All Rights Reserved.</p>
-                <div class="payments">
-                    <!-- Icons if available -->
-                    <span>VISA</span> <span>Mastercard</span>
+                <div class="footer-col">
+                    <a href="#">Login</a>
+                    <a href="#">My Account</a>
+                    <a href="#" class="wrap-link">Refund & Return Policy</a>
+                    <a href="#">Postal Codes</a>
+                    <a href="#">Become a Vendor</a>
                 </div>
+                <div class="footer-col">
+                    <a href="#">Talbeena</a>
+                    <a href="#">Sidr Honey</a>
+                    <a href="#">Ajwa Dates</a>
+                    <a href="#">Dry Fruits</a>
+                    <a href="#">Combos</a>
+                    <a href="#">All Products</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#">Health & Wellness</a>
+                    <a href="#">Organic Food</a>
+                    <a href="#">Natural Sweets</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">New Arrivals</a>
+                </div>
+                <div class="footer-support">
+                    <div class="support-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <div class="support-info">
+                            <small>HELP CENTER</small>
+                            <p>info@al-ghiza.com.pk</p>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="support-info">
+                            <small>PHONE SUPPORT</small>
+                            <p>021 35343388</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; Al Ghiza 2025 All rights reserved. Powered by <span class="powered-by">SMIT</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="./assets/js/index.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
