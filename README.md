@@ -53,23 +53,4 @@ The website features a **sticky glassmorphic header** that changes appearance up
 
 ---
 
-## 📱 Responsiveness (Mobile First Approach)
-The website is fully optimized for all devices:
-- **Desktop:** 1400px container for large screens.
-- **Tablet:** Grids automatically adjust from 4 columns to 2-3 columns.
-- **Mobile:** 
-  - Header collapses into a compact version.
-  - Category strip becomes a touch-friendly horizontal scroller.
-  - Product cards adjust for one-handed navigation.
-  - Sidebar menu provides easy access to all pages.
-
----
-
-## 🧠 JavaScript Logic breakdown
-1. **Slider System:** Uses a custom `showSlides` function with `setInterval` for automation and manual dot overrides.
-2. **Infinite Product Track:** Clones product nodes to create a "seamless loop" effect during horizontal scrolling.
-3. **Scroll Snap:** Sophisticated logic in `index.js` ensures that after a drag or swipe, the cards snap perfectly into place.
-4. **Sticky Effects:** Event listeners monitor the `window.scrollY` position to toggle CSS classes for the header and the "Back to Top" button.
-
----
 
