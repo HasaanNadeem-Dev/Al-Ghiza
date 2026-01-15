@@ -1,4 +1,4 @@
-# Al-Ghiza | Pure Nutrition - Comprehensive Analysis
+# Al-Ghiza 
 
 ## 🚀 Project Overview
 **Al-Ghiza** is a premium e-commerce web application specializing in organic and pure nutrition products. The website is designed to provide a seamless shopping experience for high-quality items like Talbeena, Honey, Dates, Dry Fruits, and specialized combo deals.
