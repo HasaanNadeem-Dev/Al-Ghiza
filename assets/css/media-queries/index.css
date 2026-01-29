@@ -124,7 +124,9 @@
     /* Ensure 2 items per row */
     .dates-grid,
     .product-grid-6,
-    .product-row {
+    .product-row,
+    #related-products-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }

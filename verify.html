@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email - Al-Ghiza</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar-footer.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- Floating Back Button (Exit) -->
+    <a href="index.html" class="floating-back-btn">
+        <div class="icon-box">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </div>
+    </a>
+
+    <!-- Main Auth Card -->
+    <div class="auth-card">
+        <div class="auth-header-text" style="margin-top: 20px;">
+            <h2>Check Your Email</h2>
+            <p>Verification is required to proceed.</p>
+        </div>
+
+        <div class="verify-msg-box">
+            <div class="verify-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <p id="verify-msg" style="font-size: 13px; margin-top: 15px; width: 90%;">
+                We've sent a verification link to your email address. Please click the link in the email to activate
+                your account.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 20px; width: 100%;">
+            <p class="verify-subtext">Didn't receive the email?</p>
+            <button class="auth-btn" id="resend-btn" onclick="location.reload()">Resend Email</button>
+        </div>
+
+        <!-- Optional: Link back to login if they need to switch account -->
+        <div class="auth-toggle-footer">
+            <p>Wrong email? <a href="login.html">Sign in</a></p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAqFB54Y-jLl3tntYsHPzfi26zMJF5lUdY",
+            authDomain: "al-ghiza.firebaseapp.com",
+            projectId: "al-ghiza",
+            storageBucket: "al-ghiza.firebasestorage.app",
+            messagingSenderId: "226309493007",
+            appId: "1:226309493007:web:8dea0035f6b767d2062e7a",
+            measurementId: "G-DEL5MFSD9L"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+        if (email) {
+            document.getElementById('verify-msg').innerHTML = `We've sent a verification link to <strong>${email}</strong>. Please click the link in the email to activate your account.`;
+        }
+
+        // Auto-check for verification
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // Poll every 3 seconds to see if they've verified in the other tab
+                const checkInterval = setInterval(async () => {
+                    await user.reload();
+                    if (user.emailVerified) {
+                        clearInterval(checkInterval);
+                        document.getElementById('verify-msg').innerHTML = "<span style='color: green; font-weight: 600;'><i class='fa-solid fa-circle-check'></i> Email Verified! Redirecting...</span>";
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 2000);
+                    }
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>

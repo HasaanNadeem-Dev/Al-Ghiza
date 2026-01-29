@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Ghiza | Pure Nutrition</title>
+    <title>Al-Ghiza </title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar-footer.css">
     <link rel="stylesheet" href="assets/css/media-queries/index.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +34,10 @@
                 <!-- Search -->
                 <div class="search-section">
                     <div class="search-pill">
-                        <input type="text" placeholder="Search our store">
+                        <input type="text" placeholder="Search our store" id="search-input" autocomplete="off">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
+                    <div class="search-results-popup" id="search-results"></div>
                 </div>
 
                 <!-- Actions -->
@@ -45,9 +47,22 @@
                         <strong>Karachi</strong>
                     </div>
 
-                    <a href="#" class="icon-link mobile-search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <div class="profile-dropdown">
+                        <a href="account.html" class="icon-link" id="nav-profile-icon"><i
+                                class="fa-regular fa-user"></i></a>
+                        <div class="profile-menu">
+                            <a href="account.html"><i class="fa-regular fa-circle-user"></i> Your Account</a>
+                            <a href="account.html#orders"><i class="fa-solid fa-box-open"></i> Orders</a>
+                            <a href="account.html#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+                            <a href="#"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </div>
 
-                    <a href="#" class="icon-link"><i class="fa-regular fa-user"></i></a>
+                    <a href="#" class="icon-link mobile-search-icon" id="mobile-search-trigger">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
 
                     <a href="#" class="icon-link cart-link">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -150,23 +165,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/IraniDates-500g_600x.jpg" alt="Irani Dates">
+                    <a href="irani-dates.html"><img src="assets/img/cards/dates/IraniDates-500g_600x.jpg"
+                            alt="Irani Dates"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Irani Dates</h3>
+                    <h3 class="product-title"><a href="irani-dates.html">Irani Dates</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.25kg</span>
                         <span class="opt">0.5kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (1 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.375</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="irani-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -174,10 +190,11 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/AjwaDates-500g_600x.jpg" alt="Ajwa Dates">
+                    <a href="ajwa-dates.html"><img src="assets/img/cards/dates/AjwaDates-500g_600x.jpg"
+                            alt="Ajwa Dates"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Ajwa Dates</h3>
+                    <h3 class="product-title"><a href="ajwa-dates.html">Ajwa Dates</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.25kg</span>
                         <span class="opt">0.5kg</span>
@@ -188,9 +205,9 @@
                     <div class="product-price">Rs.1,050</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="ajwa-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -198,10 +215,11 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/Ajwa_Jumbo_Dates-500g_600x.jpg" alt="Ajwa Dates - Large">
+                    <a href="ajwa-jumbo-dates.html"><img src="assets/img/cards/dates/Ajwa_Jumbo_Dates-500g_600x.jpg"
+                            alt="Ajwa Dates - Large"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Ajwa Dates - Large</h3>
+                    <h3 class="product-title"><a href="ajwa-jumbo-dates.html">Ajwa Dates - Large</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.25kg</span>
                         <span class="opt">0.5kg</span>
@@ -212,9 +230,9 @@
                     <div class="product-price">Rs.1,270</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="ajwa-jumbo-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -222,11 +240,12 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/SukriDates-500g_39fce904-d553-455b-9008-490170e31c85_600x.jpg"
-                        alt="Sukri Dates">
+                    <a href="sukri-dates.html"><img
+                            src="assets/img/cards/dates/SukriDates-500g_39fce904-d553-455b-9008-490170e31c85_600x.jpg"
+                            alt="Sukri Dates"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Sukri Dates</h3>
+                    <h3 class="product-title"><a href="sukri-dates.html">Sukri Dates</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.25kg</span>
                         <span class="opt">0.5kg</span>
@@ -237,9 +256,9 @@
                     <div class="product-price">Rs.850</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="sukri-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -247,11 +266,12 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/KalmiDates-500g_a5f219b1-eed4-47d0-a016-f0eadc278cf9_600x.jpg"
-                        alt="Kalmi Dates">
+                    <a href="kalmi-dates.html"><img
+                            src="assets/img/cards/dates/KalmiDates-500g_a5f219b1-eed4-47d0-a016-f0eadc278cf9_600x.jpg"
+                            alt="Kalmi Dates"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Kalmi Dates</h3>
+                    <h3 class="product-title"><a href="kalmi-dates.html">Kalmi Dates</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.25kg</span>
                         <span class="opt">0.5kg</span>
@@ -262,9 +282,9 @@
                     <div class="product-price">Rs.1,040</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="kalmi-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -272,10 +292,11 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/dates/AmberDates-500g_600x.jpg" alt="Amber Dates">
+                    <a href="amber-dates.html"><img src="assets/img/cards/dates/AmberDates-500g_600x.jpg"
+                            alt="Amber Dates"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Amber Dates</h3>
+                    <h3 class="product-title"><a href="amber-dates.html">Amber Dates</a></h3>
                     <div class="weight-options">
                         <span class="opt active">0.250Kg</span>
                         <span class="opt">0.5Kg</span>
@@ -286,9 +307,9 @@
                     <div class="product-price">Rs.1,300</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="amber-dates.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -301,28 +322,30 @@
             <a href="#" class="view-all">See more <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
-        <div class="dates-grid">
+        <div class="dates-grid talbeena-grid">
             <!-- Product 1: Ajwa Talbeena -->
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/Ajwa_Talbeena.jpg" alt="Ajwa Talbeena">
+                    <a href="ajwa-talbeena.html">
+                        <img src="assets/img/cards/talbeena/Ajwa_Talbeena.jpg" alt="Ajwa Talbeena">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Ajwa Talbeena</h3>
+                    <h3 class="product-title"><a href="ajwa-talbeena.html">Ajwa Talbeena</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (24 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,200</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="ajwa-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -330,23 +353,25 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/Pistachio-Talbeena.jpg" alt="Pistachio Talbeena">
+                    <a href="pistachio-talbeena.html">
+                        <img src="assets/img/cards/talbeena/Pistachio-Talbeena.jpg" alt="Pistachio Talbeena">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Pistachio Talbeena</h3>
+                    <h3 class="product-title"><a href="pistachio-talbeena.html">Pistachio Talbeena</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.9 (18 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,450</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="pistachio-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -354,23 +379,25 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/Strawberry_Talbeena.jpg" alt="Strawberry Talbeena">
+                    <a href="strawberry-talbeena.html">
+                        <img src="assets/img/cards/talbeena/Strawberry_Talbeena.jpg" alt="Strawberry Talbeena">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Strawberry Talbeena</h3>
+                    <h3 class="product-title"><a href="strawberry-talbeena.html">Strawberry Talbeena</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.8 (12 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,100</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="strawberry-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -378,24 +405,26 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/Talbeena_Almond_with_extra_nuts.jpg"
-                        alt="Talbeena Almond with Extra Nuts">
+                    <a href="almond-talbeena.html">
+                        <img src="assets/img/cards/talbeena/Talbeena_Almond_with_extra_nuts.jpg"
+                            alt="Talbeena Almond with Extra Nuts">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Almond with Extra Nuts</h3>
+                    <h3 class="product-title"><a href="almond-talbeena.html">Almond with Extra Nuts</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (35 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,550</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="almond-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -403,23 +432,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/Talbeena_Sugar_free.jpg" alt="Talbeena Sugar free">
+                    <a href="sugar-free-talbeena.html"><img src="assets/img/cards/talbeena/Talbeena_Sugar_free.jpg"
+                            alt="Talbeena Sugar free"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Sugar Free Talbeena</h3>
+                    <h3 class="product-title"><a href="sugar-free-talbeena.html">Sugar Free Talbeena</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.7 (21 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.950</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="sugar-free-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -427,23 +457,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/talbeena/qulfa_talbeena.jpg" alt="Qulfa Talbeena">
+                    <a href="qulfa-talbeena.html"><img src="assets/img/cards/talbeena/qulfa_talbeena.jpg"
+                            alt="Qulfa Talbeena"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Qulfa Talbeena</h3>
+                    <h3 class="product-title"><a href="qulfa-talbeena.html">Qulfa Talbeena</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.9 (42 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,050</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="qulfa-talbeena.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -466,28 +497,30 @@
             <a href="#" class="view-all">See more <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
-        <div class="dates-grid">
+        <div class="dates-grid honey-grid">
             <!-- Product 1: Acacia Honey -->
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Acacia Honey.png" alt="Acacia Honey">
+                    <a href="acacia-honey.html">
+                        <img src="assets/img/cards/honey/Acacia Honey.png" alt="Acacia Honey">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Acacia Honey</h3>
+                    <h3 class="product-title"><a href="acacia-honey.html">Acacia Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (18 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,500</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="acacia-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -495,23 +528,25 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Eucalyptus Honey.png" alt="Eucalyptus Honey">
+                    <a href="eucalyptus-honey.html">
+                        <img src="assets/img/cards/honey/Eucalyptus Honey.png" alt="Eucalyptus Honey">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Eucalyptus Honey</h3>
+                    <h3 class="product-title"><a href="eucalyptus-honey.html">Eucalyptus Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.9 (14 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,350</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="eucalyptus-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -519,23 +554,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Olive Blossom Honey.png" alt="Olive Blossom Honey">
+                    <a href="olive-blossom-honey.html"><img src="assets/img/cards/honey/Olive Blossom Honey.png"
+                            alt="Olive Blossom Honey"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Olive Blossom Honey</h3>
+                    <h3 class="product-title"><a href="olive-blossom-honey.html">Olive Blossom Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.8 (10 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,800</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="olive-blossom-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -543,23 +579,25 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Orange Blossom Honey.png" alt="Orange Blossom Honey">
+                    <a href="orange-blossom-honey.html">
+                        <img src="assets/img/cards/honey/Orange Blossom Honey.png" alt="Orange Blossom Honey">
+                    </a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Orange Blossom Honey</h3>
+                    <h3 class="product-title"><a href="orange-blossom-honey.html">Orange Blossom Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (22 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,650</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="orange-blossom-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -567,23 +605,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Robinia Honey.png" alt="Robinia Honey">
+                    <a href="robinia-honey.html"><img src="assets/img/cards/honey/Robinia Honey.png"
+                            alt="Robinia Honey"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Robinia Honey</h3>
+                    <h3 class="product-title"><a href="robinia-honey.html">Robinia Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.9 (16 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.1,400</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="robinia-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -591,23 +630,24 @@
             <div class="date-card">
                 <div class="badge-discount">New Year's Discount</div>
                 <div class="product-img">
-                    <img src="assets/img/cards/honey/Sidr Beri Honey.png" alt="Sidr (Beri) Honey">
+                    <a href="sidr-beri-honey.html"><img src="assets/img/cards/honey/Sidr Beri Honey.png"
+                            alt="Sidr (Beri) Honey"></a>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">Sidr (Beri) Honey</h3>
+                    <h3 class="product-title"><a href="sidr-beri-honey.html">Sidr (Beri) Honey</a></h3>
                     <div class="weight-options">
                         <span class="opt active">500g</span>
                         <span class="opt">1kg</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (42 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.2,500</div>
                 </div>
                 <div class="product-footer">
-                    <div class="ribbon-add">
+                    <a href="sidr-beri-honey.html" class="ribbon-add">
                         <i class="fa-solid fa-plus"></i>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -644,7 +684,7 @@
                         <span class="opt active">1kg Combo</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 5.0 (120 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.2,499 <span class="old-price">Rs.3,200</span></div>
                 </div>
@@ -667,7 +707,7 @@
                         <span class="opt active">1.5kg Combo</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.9 (85 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.4,299 <span class="old-price">Rs.5,500</span></div>
                 </div>
@@ -690,7 +730,7 @@
                         <span class="opt active">2kg Pack</span>
                     </div>
                     <div class="product-rating">
-                        <i class="fa-solid fa-star"></i> 4.8 (64 Reviews)
+                        Be the first to review
                     </div>
                     <div class="product-price">Rs.5,499 <span class="old-price">Rs.7,500</span></div>
                 </div>
@@ -706,7 +746,7 @@
     <!-- Features Scroll -->
     <section class="ktown-features">
         <div class="features-header">
-            <h2>We always provide<br>you the best in K-Town</h2>
+            <h2>We always provide<br>you the best in Karachi</h2>
         </div>
         <div class="marquee-container">
             <div class="marquee-content">
@@ -745,13 +785,12 @@
                     <p>Order and pick up</p>
                     <img src="assets/img/back ground/Order-pick-up.png" alt="Icon">
                 </div>
-                <!-- Feature 8 -->
+
                 <div class="feature-card">
                     <p>Authentic goods</p>
                     <img src="assets/img/back ground/14.png" alt="Icon">
                 </div>
 
-                <!-- Duplicate for seamless scroll -->
                 <div class="feature-card">
                     <p>Farm-to-Table</p>
                     <img src="assets/img/back ground/Farm-to-Table.png" alt="Icon">
@@ -791,7 +830,6 @@
     <!-- FOOTER SECTION -->
     <footer class="main-footer">
         <div class="container">
-            <!-- Top Row: Social + App Links -->
             <div class="footer-top">
                 <div class="connect-social">
                     <span>Connect with us</span>
@@ -807,7 +845,6 @@
                 </div>
             </div>
 
-            <!-- Middle Row: Links + Support -->
             <div class="footer-middle">
                 <div class="footer-col">
                     <a href="#">About Us</a>
@@ -856,14 +893,55 @@
                 </div>
             </div>
 
-            <!-- Bottom Row: Copyright -->
             <div class="footer-bottom">
                 <p>&copy; Al Ghiza 2025 All rights reserved. Powered by <span class="powered-by">SMIT</span></p>
             </div>
         </div>
     </footer>
 
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Your Shopping Cart</h3>
+            <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items">
+            <!-- Items will be injected here -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-footer-row">
+                <span class="footer-label">SUBTOTAL</span>
+                <span class="footer-price" id="cart-subtotal-val">Rs. 0 <small>PKR</small></span>
+            </div>
+            <button class="cart-btn checkout-btn">CHECK OUT</button>
+            <button class="cart-btn view-cart-btn">VIEW CART</button>
+            <p class="cart-disclaimer">Shipping, taxes, and discount codes are calculated at checkout</p>
+        </div>
+    </div>
+
+    <!-- Mobile Search Overlay -->
+    <div id="mobile-search-overlay" class="mobile-search-overlay">
+        <div class="mobile-search-container">
+            <div class="mobile-search-header">
+                <button id="mobile-search-close" class="mobile-search-close">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="mobile-search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search our store" id="mobile-search-input" autocomplete="off">
+                </div>
+            </div>
+            <div class="mobile-search-results" id="mobile-search-results">
+                <!-- Search results will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+
     <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/navbar-auth.js"></script>
 </body>
 
 </html>

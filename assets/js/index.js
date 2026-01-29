@@ -401,3 +401,403 @@ function initNativeAutoScroll() {
 
 // Call after a slight delay to ensure layout is applied
 setTimeout(initNativeAutoScroll, 1000);
+
+// --- Cart Functionality ---
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+const cartDrawer = document.getElementById('cart-drawer');
+const cartOverlay = document.getElementById('cart-overlay');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartSubtotalVal = document.getElementById('cart-subtotal-val');
+const cartCountBadge = document.querySelector('.cart-count');
+const closeCartBtn = document.getElementById('close-cart-btn');
+const cartLinks = document.querySelectorAll('.cart-link');
+
+function toggleCart(show) {
+    if (show) {
+        if (cartDrawer) cartDrawer.classList.add('active');
+        if (cartOverlay) cartOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    } else {
+        if (cartDrawer) cartDrawer.classList.remove('active');
+        if (cartOverlay) cartOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function updateCartUI() {
+    if (!cartItemsContainer) return;
+
+    // Update Header
+    const headerTitle = document.querySelector('.cart-drawer-header h3');
+    let totalItems = 0;
+    cart.forEach(item => totalItems += item.quantity);
+    if (headerTitle) {
+        headerTitle.innerHTML = `CART (${totalItems})`;
+    }
+
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="empty-cart-msg">Your cart is empty.</div>';
+        if (cartSubtotalVal) cartSubtotalVal.innerHTML = 'Rs. 0';
+        if (cartCountBadge) cartCountBadge.innerText = '0';
+        return;
+    }
+
+    // Add "Products" label
+    const label = document.createElement('span');
+    label.className = 'cart-section-label';
+    label.innerText = 'Products';
+    cartItemsContainer.appendChild(label);
+
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        // Mockuo old price (estimate or use a field if available)
+        const oldPrice = item.price * 1.2;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+            <div class="cart-item-info">
+                <div class="cart-item-title">${item.title}</div>
+                <div class="cart-item-price-row">
+                    <span class="cart-item-price">Rs. ${item.price.toLocaleString()}</span>
+                    <span class="cart-item-old-price">Rs. ${Math.round(oldPrice).toLocaleString()}</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                    <span class="qty-val">${item.quantity}</span>
+                    <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                </div>
+                <span class="remove-item-text" onclick="deleteCartItem(${index})">REMOVE</span>
+            </div>
+        `;
+        cartItemsContainer.appendChild(itemEl);
+    });
+
+    if (cartSubtotalVal) {
+        cartSubtotalVal.innerHTML = `Rs. ${subtotal.toLocaleString()} <small>PKR</small>`;
+    }
+    if (cartCountBadge) cartCountBadge.innerText = totalItems;
+}
+
+window.addToCart = function (product, openDrawer = false) {
+    // Check if item already exists
+    const existingItem = cart.find(item => item.title === product.title);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    saveCart();
+    updateCartUI();
+    if (openDrawer) {
+        toggleCart(true);
+    }
+};
+
+window.changeQuantity = function (index, delta) {
+    if (cart[index]) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity < 1) cart[index].quantity = 1;
+        saveCart();
+        updateCartUI();
+    }
+};
+
+window.deleteCartItem = function (index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCartUI();
+};
+
+// Event Listeners for Cart
+if (cartLinks.length > 0) {
+    cartLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleCart(true);
+        });
+    });
+}
+
+if (closeCartBtn) {
+    closeCartBtn.addEventListener('click', () => toggleCart(false));
+}
+
+if (cartOverlay) {
+    cartOverlay.addEventListener('click', () => toggleCart(false));
+}
+
+// Redirect to product page on "+" click with category capture
+document.addEventListener('click', function (e) {
+    const addBtn = e.target.closest('.ribbon-add');
+    if (addBtn) {
+        const productCard = addBtn.closest('.date-card');
+        if (productCard) {
+            const titleEl = productCard.querySelector('.product-title');
+            const priceEl = productCard.querySelector('.product-price');
+            const imgEl = productCard.querySelector('.product-img img');
+
+            if (titleEl && priceEl && imgEl) {
+                const title = titleEl.innerText;
+                const priceText = priceEl.innerText;
+                const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+                const image = imgEl.src;
+
+                // Handle Quick Add (direct add to cart without redirect/drawer)
+                if (addBtn.classList.contains('quick-add')) {
+                    e.preventDefault();
+                    if (window.addToCart) {
+                        window.addToCart({ title, price, image }, false);
+
+                        // Visual feedback
+                        const icon = addBtn.querySelector('i');
+                        if (icon) {
+                            const originalClass = icon.className;
+                            icon.className = 'fa-solid fa-check';
+                            setTimeout(() => {
+                                icon.className = originalClass;
+                            }, 1500);
+                        }
+                    }
+                    return;
+                }
+
+                // Normal behavior: Capture category and redirect
+                const container = productCard.closest('.container');
+                let category = 'Dates'; // Default
+                if (container) {
+                    const header = container.querySelector('h2');
+                    if (header) {
+                        const text = header.innerText.toLowerCase();
+                        if (text.includes('talbeena')) category = 'Talbeena';
+                        else if (text.includes('honey')) category = 'Honey';
+                        else if (text.includes('dates')) category = 'Dates';
+                    }
+                }
+
+                // Store in localStorage including category
+                localStorage.setItem('selectedProduct', JSON.stringify({ title, price, image, category }));
+
+                // Redirect to static page if exists, otherwise dynamic
+                if (title === 'Ajwa Dates') {
+                    window.location.href = 'ajwa-dates.html';
+                } else if (title === 'Ajwa Talbeena') {
+                    window.location.href = 'ajwa-talbeena.html';
+                } else if (title === 'Sidr Honey') {
+                    window.location.href = 'sidr-honey.html';
+                } else {
+                    window.location.href = 'productpage.html';
+                }
+            }
+        }
+    }
+});
+// --- Search Functionality ---
+const searchProducts = [
+    // Dates
+    { title: 'Ajwa Dates', category: 'Dates', price: 'Rs. 1,200', image: 'assets/img/cards/dates/AjwaDates-500g_600x.jpg', link: 'ajwa-dates.html' },
+    { title: 'Sukri Dates', category: 'Dates', price: 'Rs. 800', image: 'assets/img/cards/dates/SukriDates-500g_39fce904-d553-455b-9008-490170e31c85_600x.jpg', link: 'sukri-dates.html' },
+    { title: 'Irani Dates', category: 'Dates', price: 'Rs. 600', image: 'assets/img/cards/dates/IraniDates-500g_600x.jpg', link: 'irani-dates.html' },
+    { title: 'Ajwa Jumbo Dates', category: 'Dates', price: 'Rs. 1,500', image: 'assets/img/cards/dates/Ajwa_Jumbo_Dates-500g_600x.jpg', link: 'ajwa-jumbo-dates.html' },
+    { title: 'Kalmi Dates', category: 'Dates', price: 'Rs. 900', image: 'assets/img/cards/dates/KalmiDates-500g_a5f219b1-eed4-47d0-a016-f0eadc278cf9_600x.jpg', link: 'kalmi-dates.html' },
+    { title: 'Amber Dates', category: 'Dates', price: 'Rs. 1,100', image: 'assets/img/cards/dates/AmberDates-500g_600x.jpg', link: 'amber-dates.html' },
+
+    // Talbeena
+    { title: 'Ajwa Talbeena', category: 'Talbeena', price: 'Rs. 950', image: 'assets/img/cards/talbeena/Ajwa_Talbeena.jpg', link: 'ajwa-talbeena.html' },
+    { title: 'Pistachio Talbeena', category: 'Talbeena', price: 'Rs. 1,050', image: 'assets/img/cards/talbeena/Pistachio-Talbeena.jpg', link: 'pistachio-talbeena.html' },
+    { title: 'Strawberry Talbeena', category: 'Talbeena', price: 'Rs. 850', image: 'assets/img/cards/talbeena/Strawberry_Talbeena.jpg', link: 'strawberry-talbeena.html' },
+    { title: 'Almond Talbeena', category: 'Talbeena', price: 'Rs. 950', image: 'assets/img/cards/talbeena/Almond_with_Extra_Nuts_Talbeena.jpg', link: 'almond-talbeena.html' },
+    { title: 'Sugar Free Talbeena', category: 'Talbeena', price: 'Rs. 900', image: 'assets/img/cards/talbeena/Talbeena_Sugar_free.jpg', link: 'sugar-free-talbeena.html' },
+    { title: 'Qulfa Talbeena', category: 'Talbeena', price: 'Rs. 850', image: 'assets/img/cards/talbeena/qulfa_talbeena.jpg', link: 'qulfa-talbeena.html' },
+
+    // Honey
+    { title: 'Acacia Honey', category: 'Honey', price: 'Rs. 1,800', image: 'assets/img/cards/honey/Acacia Honey.png', link: 'acacia-honey.html' },
+    { title: 'Sidr Honey', category: 'Honey', price: 'Rs. 2,500', image: 'assets/img/cards/honey/Sidr Beri Honey.png', link: 'sidr-honey.html' },
+    { title: 'Olive Blossom Honey', category: 'Honey', price: 'Rs. 2,200', image: 'assets/img/cards/honey/Olive Blossom Honey.png', link: 'olive-blossom-honey.html' },
+
+    // Nuts (referenced from images)
+    { title: 'Premium Walnuts', category: 'Nuts', price: 'Rs. 1,400', image: 'assets/img/cards/Walnuts-icon.png', link: '#' },
+    { title: 'Premium Almonds', category: 'Nuts', price: 'Rs. 1,200', image: 'assets/img/cards/badam-icon.png', link: '#' },
+    { title: 'Premium Pistachios', category: 'Nuts', price: 'Rs. 1,600', image: 'assets/img/cards/Pistachios-icon.png', link: '#' }
+];
+
+const trendingKeywords = [
+    'Ajwa Dates', 'Talbeena', 'Pure Honey', 'Almonds', 'Walnuts', 'Combo Deals', 'Kalmi Dates', 'Sidr Honey'
+];
+
+function initSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if (!searchInput || !searchResults) return;
+
+    // Show trending on focus/click if empty
+    const showTrendingIfEmpty = () => {
+        if (searchInput.value.trim() === '') {
+            displayTrending();
+        }
+    };
+
+    searchInput.addEventListener('focus', showTrendingIfEmpty);
+    searchInput.addEventListener('click', showTrendingIfEmpty);
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        if (query.length === 0) {
+            displayTrending();
+            return;
+        }
+
+        // Filter and Sort for relevance
+        const matches = searchProducts
+            .filter(p => {
+                const title = p.title.toLowerCase();
+                const category = p.category.toLowerCase();
+
+                // If query is 1 char, be strict: only show if a word STARTS with it
+                if (query.length === 1) {
+                    return title.startsWith(query) || title.split(' ').some(word => word.startsWith(query)) || category.startsWith(query);
+                }
+
+                // If query > 1 char, be inclusive: show if it contains the query anywhere
+                return title.includes(query) || category.includes(query);
+            })
+            .sort((a, b) => {
+                const aTitle = a.title.toLowerCase();
+                const bTitle = b.title.toLowerCase();
+
+                // Check if starts with query (higher priority)
+                const aStarts = aTitle.startsWith(query) || aTitle.split(' ').some(word => word.startsWith(query));
+                const bStarts = bTitle.startsWith(query) || bTitle.split(' ').some(word => word.startsWith(query));
+
+                if (aStarts && !bStarts) return -1;
+                if (!aStarts && bStarts) return 1;
+
+                // Secondary: shorter titles first
+                return a.title.length - b.title.length;
+            });
+
+        displaySearchResults(matches, query);
+    });
+
+    function displayTrending() {
+        searchResults.innerHTML = `
+            <div class="trending-searches">
+                <span class="trending-title">Trending Searches</span>
+                <div class="trending-tags">
+                    ${trendingKeywords.map(kw => `<a href="#" class="trending-tag">${kw}</a>`).join('')}
+                </div>
+            </div>
+        `;
+
+        // Add click events to tags
+        searchResults.querySelectorAll('.trending-tag').forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                e.preventDefault();
+                searchInput.value = tag.innerText;
+                // Trigger input event to show results
+                searchInput.dispatchEvent(new Event('input'));
+            });
+        });
+
+        searchResults.classList.add('active');
+    }
+
+    function displaySearchResults(matches, query) {
+        searchResults.innerHTML = '';
+
+        if (matches.length === 0) {
+            searchResults.innerHTML = '<div class="no-results">No products found.</div>';
+        } else {
+            // Header
+            const header = document.createElement('div');
+            header.className = 'search-popup-header';
+            header.innerHTML = 'Products';
+            searchResults.appendChild(header);
+
+            // Results list
+            const list = document.createElement('div');
+            list.className = 'search-results-list';
+
+            matches.slice(0, 5).forEach(product => {
+                const item = document.createElement('a');
+                item.href = product.link;
+                item.className = 'search-result-item';
+                item.innerHTML = `
+                    <div class="search-result-img-container">
+                        <img src="${product.image}" alt="${product.title}" class="search-result-img">
+                    </div>
+                    <div class="search-result-info">
+                        <span class="search-result-title">${product.title}</span>
+                        <span class="search-result-price">${product.price}</span>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+            searchResults.appendChild(list);
+
+            // Footer
+            const footer = document.createElement('a');
+            footer.href = '#'; // Could link to a full search results page
+            footer.className = 'search-popup-footer';
+            footer.innerHTML = `
+                <span>Search for "${query}"</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            `;
+            searchResults.appendChild(footer);
+        }
+        searchResults.classList.add('active');
+    }
+
+    // Close search results when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.remove('active');
+        }
+
+        // Profile Dropdown Toggle/Close
+        const profileDropdown = document.querySelector('.profile-dropdown');
+        const profileMenu = document.querySelector('.profile-menu');
+        if (profileDropdown && profileMenu) {
+            if (profileDropdown.contains(e.target)) {
+                // Toggle if clicking the icon link itself
+                if (e.target.closest('.icon-link')) {
+                    e.preventDefault();
+                    profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+                }
+            } else {
+                profileMenu.style.display = 'none';
+            }
+        }
+    });
+
+    // Handle Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const activeResult = searchResults.querySelector('.search-result-item');
+            if (activeResult) {
+                window.location.href = activeResult.href;
+            }
+        }
+    });
+}
+
+// Global Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartUI();
+    initSearch(); // Initialize search
+});

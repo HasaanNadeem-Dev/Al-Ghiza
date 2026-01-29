@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Create Account - Al-Ghiza</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar-footer.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- Floating Back Button (Exit) -->
+    <a href="index.html" class="floating-back-btn">
+        <div class="icon-box">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </div>
+    </a>
+
+    <!-- Main Auth Card -->
+    <div class="auth-card">
+        <!-- Icon Header Removed -->
+
+        <div class="auth-form-wrapper">
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="auth-header-text login-header">
+                    <h2>Sign in with email</h2>
+                    <p>Welcome back to Al-Ghiza. Pure nutrition awaits.</p>
+                </div>
+
+                <div class="scroll-inputs">
+                    <div class="input-group-icon">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="error-message" id="login-email-error"></div>
+                    <div class="input-group-icon">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" placeholder="Password" required>
+                        <i class="fa-regular fa-eye toggle-password"></i>
+                    </div>
+                    <div class="error-message" id="login-password-error"></div>
+
+                    <div class="forgot-pass-row">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-btn">Sign In</button>
+            </form>
+
+            <!-- Signup Form (Hidden initially) -->
+            <form id="signup-form" style="display: none;">
+                <div class="auth-header-text signup-header">
+                    <h2>Create an account</h2>
+                    <p>Join Al-Ghiza for premium benefits.</p>
+                </div>
+
+                <div class="scroll-inputs">
+                    <div class="input-group-icon">
+                        <i class="fa-regular fa-user input-icon"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group-icon">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="error-message" id="signup-email-error"></div>
+                    <div class="input-group-icon">
+                        <i class="fa-regular fa-calendar input-icon"></i>
+                        <input type="date" id="signup-dob" required class="icon-date">
+                    </div>
+                    <div class="input-group-icon">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" placeholder="Create Password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+        </div>
+
+        <div class="divider-text">Or sign in with</div>
+
+        <div class="social-login-row">
+            <button class="social-circle-btn google">
+                <i class="fa-brands fa-google"></i>
+            </button>
+        </div>
+
+        <div class="auth-toggle-footer">
+            <p id="footer-text">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAqFB54Y-jLl3tntYsHPzfi26zMJF5lUdY",
+            authDomain: "al-ghiza.firebaseapp.com",
+            projectId: "al-ghiza",
+            storageBucket: "al-ghiza.firebasestorage.app",
+            messagingSenderId: "226309493007",
+            appId: "1:226309493007:web:8dea0035f6b767d2062e7a",
+            measurementId: "G-DEL5MFSD9L"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const googleProvider = new GoogleAuthProvider();
+
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const switchToSignup = document.getElementById('switch-to-signup');
+        const footerText = document.getElementById('footer-text');
+        // Removed authTitle and authSubtitle references as they are now static in forms
+
+        function showSignup() {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+            // Title updates removed
+            footerText.innerHTML = 'Already have an account? <a href="#" id="switch-to-login">Log in</a>';
+
+            document.getElementById('switch-to-login').addEventListener('click', (e) => {
+                e.preventDefault();
+                showLogin();
+            });
+        }
+
+        function showLogin() {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            // Title updates removed
+            footerText.innerHTML = 'Don\'t have an account? <a href="#" id="switch-to-signup-inner">Sign up</a>';
+
+            document.getElementById('switch-to-signup-inner').addEventListener('click', (e) => {
+                e.preventDefault();
+                showSignup();
+            });
+        }
+
+        if (switchToSignup) {
+            switchToSignup.addEventListener('click', (e) => {
+                e.preventDefault();
+                showSignup();
+            });
+        }
+
+        // --- Firebase Auth Logic ---
+
+        // Handle Signup
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fullName = signupForm.querySelector('input[placeholder="Full Name"]').value;
+            const email = signupForm.querySelector('input[type="email"]').value;
+            const password = signupForm.querySelector('input[placeholder="Create Password"]').value;
+            const dob = document.getElementById('signup-dob').value;
+            const btn = signupForm.querySelector('.auth-btn');
+
+            // --- Age Validation ---
+            if (dob) {
+                const dobDate = new Date(dob);
+                const today = new Date();
+                let age = today.getFullYear() - dobDate.getFullYear();
+                const m = today.getMonth() - dobDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+                    age--;
+                }
+
+                if (age < 10) {
+                    alert("You are too young to create an account.");
+                    return; // Stop execution
+                }
+            }
+
+            // Clear previous errors
+            document.getElementById('signup-email-error').style.display = 'none';
+
+            try {
+                btn.innerText = "Creating Account...";
+                btn.disabled = true;
+
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+                // Update profile with full name
+                await updateProfile(userCredential.user, {
+                    displayName: fullName
+                });
+
+                if (dob) localStorage.setItem('userDob', dob);
+
+                await sendEmailVerification(userCredential.user);
+
+                window.location.href = 'verify.html?email=' + email;
+            } catch (error) {
+                btn.innerText = "Create Account";
+                btn.disabled = false;
+
+                if (error.code === 'auth/email-already-in-use') {
+                    const errEl = document.getElementById('signup-email-error');
+                    errEl.innerText = "Email is already registered";
+                    errEl.style.display = 'block';
+                } else {
+                    alert("Error: " + error.message);
+                }
+            }
+        });
+
+        // Handle Login
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = loginForm.querySelector('input[type="email"]').value;
+            const password = loginForm.querySelector('input[type="password"]').value;
+            const btn = loginForm.querySelector('.auth-btn');
+
+            // Clear errors
+            document.getElementById('login-email-error').style.display = 'none';
+            document.getElementById('login-password-error').style.display = 'none';
+
+            try {
+                btn.innerText = "Signing In...";
+                btn.disabled = true;
+
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                if (!user.emailVerified) {
+                    alert("Please verify your email first! Check your inbox.");
+                    await signOut(auth);
+                    window.location.href = 'verify.html?email=' + email;
+                } else {
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                btn.innerText = "Sign In";
+                btn.disabled = false;
+
+                if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-email') {
+                    const errEl = document.getElementById('login-email-error');
+                    errEl.innerText = "This email is not registered";
+                    errEl.style.display = 'block';
+                } else if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-login-credentials' || error.code === 'auth/invalid-credential') {
+                    const errEl = document.getElementById('login-password-error');
+                    errEl.innerText = "Password is incorrect";
+                    errEl.style.display = 'block';
+                } else {
+                    alert("Error: " + error.message);
+                }
+            }
+        });
+
+        // Google Login
+        document.querySelector('.social-circle-btn.google').addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, googleProvider);
+                window.location.href = 'index.html';
+            } catch (error) {
+                alert("Google Login Error: " + error.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

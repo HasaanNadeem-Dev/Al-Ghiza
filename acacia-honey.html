@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acacia Honey - Al-Ghiza</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar-footer.css">
+    <link rel="stylesheet" href="assets/css/media-queries/index.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <header class="site-header-container">
+        <div class="container">
+            <div class="main-bar">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <a href="index.html" class="brand-logo">
+                        <img src="assets/img/logo/logo1.png" alt="Al-Ghiza Logo">
+                    </a>
+                </div>
+
+                <!-- Search -->
+                <div class="search-section">
+                    <div class="search-pill">
+                        <input type="text" placeholder="Search our store" id="search-input" autocomplete="off">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="search-results-popup" id="search-results"></div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions-section">
+                    <div class="deliver-pill">
+                        <span>Deliver to</span>
+                        <strong>Karachi</strong>
+                    </div>
+
+                    <div class="profile-dropdown">
+                        <a href="account.html" class="icon-link" id="nav-profile-icon"><i
+                                class="fa-regular fa-user"></i></a>
+                        <div class="profile-menu">
+                            <a href="account.html"><i class="fa-regular fa-circle-user"></i> Your Account</a>
+                            <a href="account.html#orders"><i class="fa-solid fa-box-open"></i> Orders</a>
+                            <a href="account.html#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+                            <a href="#"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="icon-link cart-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-page-main">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumb">
+                <a href="index.html">All category</a> <i class="fa-solid fa-chevron-right"></i> <span>Acacia
+                    Honey</span>
+            </nav>
+
+            <div class="product-detail-container">
+                <!-- Left: Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image-wrapper">
+                        <span class="badge-free-delivery">Free Delivery</span>
+                        <img id="main-product-img" src="assets/img/cards/honey/Acacia Honey.png" alt="Acacia Honey">
+                    </div>
+                    <div class="thumbnail-list">
+                        <img src="assets/img/cards/honey/Acacia Honey.png" class="thumb active"
+                            onclick="switchImage(this)">
+                    </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="product-info-section">
+                    <p class="vendor-name">Al-Ghiza Grocery</p>
+                    <h1 class="product-main-title">Acacia Honey - Pure & Natural</h1>
+
+                    <div class="rating-row">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="rating-text">5.0 (18 reviews)</span>
+                    </div>
+
+                    <div class="price-box">
+                        <span class="currency">Rs.</span>
+                        <span class="price-large">1,500</span>
+                        <span class="price-cents">.00</span>
+                    </div>
+
+                    <div class="payment-installments">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Klarna_logo.svg/1024px-Klarna_logo.svg.png"
+                            alt="Klarna" style="height: 15px;">
+                        <span>Split into 3 interest-free payments of Rs. 500</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn-add-bucket" onclick="addToCartCurrent()">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to bucket
+                        </button>
+                        <button class="btn-buy-now">Buy now</button>
+                    </div>
+
+                    <div class="product-meta-details">
+                        <p><strong>SKU:</strong> HNY001</p>
+                        <p><strong>Categories:</strong> Honey, Natural, Healthy</p>
+                        <p class="product-description">
+                            Acacia honey is known for its mild, sweet flavor and clear, light color. It is highly valued
+                            for its ability to remain liquid for a long period without crystallizing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products-section">
+                <div class="section-header">
+                    <h2>Related Products</h2>
+                    <a href="#" class="visit-stores">View all <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                <div id="related-products-grid" class="dates-grid">
+                    <!-- Related cards will be injected by product.js with 'Honey' filter -->
+                </div>
+            </div>
+
+            <!-- Customer Reviews Section -->
+            <section class="reviews-section">
+                <div class="section-header">
+                    <h2>Customer Reviews</h2>
+                </div>
+
+                <!-- Reviews Summary -->
+                <div class="reviews-summary">
+                    <div class="overall-rating">
+                        <div class="rating-score">0.0<span>/5</span></div>
+                        <div class="stars">
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="total-ratings-count">0 Ratings</div>
+                        <div class="total-sold-count">0 Sold</div>
+                    </div>
+                    <div class="rating-bars">
+                        <div class="rating-bar-item">
+                            <div class="star-label">5 <i class="fa-solid fa-star"></i></div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="bar-count">0</div>
+                        </div>
+                        <div class="rating-bar-item">
+                            <div class="star-label">4 <i class="fa-solid fa-star"></i></div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="bar-count">0</div>
+                        </div>
+                        <div class="rating-bar-item">
+                            <div class="star-label">3 <i class="fa-solid fa-star"></i></div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="bar-count">0</div>
+                        </div>
+                        <div class="rating-bar-item">
+                            <div class="star-label">2 <i class="fa-solid fa-star"></i></div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="bar-count">0</div>
+                        </div>
+                        <div class="rating-bar-item">
+                            <div class="star-label">1 <i class="fa-solid fa-star"></i></div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="bar-count">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="reviews-filter-bar">
+                    <div class="filter-left">
+                        <h4>Product Reviews</h4>
+                    </div>
+                    <div class="filter-right">
+                        <div class="filter-dropdown sort-dropdown">
+                            <i class="fa-solid fa-arrow-up-wide-short"></i>
+                            <span>Sort: <span class="current-sort">Most Recent</span></span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item active" data-sort="recent">Most Recent</div>
+                                <div class="dropdown-item" data-sort="relevance">Relevance</div>
+                                <div class="dropdown-item" data-sort="high">Highest Rating</div>
+                                <div class="dropdown-item" data-sort="low">Lowest Rating</div>
+                            </div>
+                        </div>
+                        <div class="filter-dropdown filter-star-dropdown">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>Filter: <span class="current-filter">All star</span></span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item active" data-filter="all">All star</div>
+                                <div class="dropdown-item" data-filter="5">5 Star Reviews</div>
+                                <div class="dropdown-item" data-filter="4">4 Star Reviews</div>
+                                <div class="dropdown-item" data-filter="3">3 Star Reviews</div>
+                                <div class="dropdown-item" data-filter="2">2 Star Reviews</div>
+                                <div class="dropdown-item" data-filter="1">1 Star Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-layout">
+                    <!-- Left: Reviews List -->
+                    <div class="reviews-list">
+                        <!-- No reviews yet -->
+                        <div class="no-reviews-msg" style="padding: 20px; color: #7E7E7E;">
+                            No reviews yet. Be the first to review this product!
+                        </div>
+                    </div>
+
+                    <!-- Right: Review Form -->
+                    <div class="review-form-container">
+                        <h3>Write a Review</h3>
+                        <form class="review-form">
+                            <div class="rating-input-wrapper">
+                                <label>Your Rating</label>
+                                <div class="rating-stars-input">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Review Title</label>
+                                <input type="text" placeholder="Give your review a title">
+                            </div>
+                            <div class="form-group">
+                                <label>Review Content</label>
+                                <textarea rows="4" placeholder="Write your comments here"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit-review">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="connect-social">
+                    <span>Connect with us</span>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="app-links">
+                    <a href="#"><img src="assets/img/back ground/ios-app.avif" alt="App Store"></a>
+                    <a href="#"><img src="assets/img/back ground/playstore.avif" alt="Google Play"></a>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="footer-col">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#">Login</a>
+                    <a href="#">My Account</a>
+                    <a href="#" class="wrap-link">Refund & Return Policy</a>
+                    <a href="#">Postal Codes</a>
+                    <a href="#">Become a Vendor</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#">Talbeena</a>
+                    <a href="#">Sidr Honey</a>
+                    <a href="#">Ajwa Dates</a>
+                    <a href="#">Dry Fruits</a>
+                    <a href="#">Combos</a>
+                    <a href="#">All Products</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#">Health & Wellness</a>
+                    <a href="#">Organic Food</a>
+                    <a href="#">Natural Sweets</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">New Arrivals</a>
+                </div>
+                <div class="footer-support">
+                    <div class="support-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <div class="support-info">
+                            <small>HELP CENTER</small>
+                            <p>info@al-ghiza.com.pk</p>
+                        </div>
+                    </div>
+                    <div class="support-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="support-info">
+                            <small>PHONE SUPPORT</small>
+                            <p>021 35343388</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Al Ghiza 2025 All rights reserved. Powered by <span class="powered-by">SMIT</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Your Shopping Cart</h3>
+            <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items">
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-footer-row">
+                <span class="footer-label">SUBTOTAL</span>
+                <span class="footer-price" id="cart-subtotal-val">Rs. 0 <small>PKR</small></span>
+            </div>
+            <button class="cart-btn checkout-btn">CHECK OUT</button>
+            <button class="cart-btn view-cart-btn">VIEW CART</button>
+            <p class="cart-disclaimer">Shipping, taxes, and discount codes are calculated at checkout</p>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <script src="assets/js/index.js"></script>
+    <script>
+        // Specific Related Category for this page
+        window.productCategory = 'Honey';
+    </script>
+    <script src="assets/js/product.js"></script>
+    <script type="module" src="assets/js/navbar-auth.js"></script>
+</body>
+
+</html>
